@@ -1,12 +1,16 @@
 <h1>Articles</h1>
 
+Le blog a <%= Article.public_count %> articles publiques.
+
 <ul>
     <% @articles.each do |article| %>
-        <li>
-            <a href="<%= article_path(article) %>">
-                <%= article.title %>
-            </a>
-        </li>
+        <% unless article.archived? %>
+            <li>
+                <a href="<%= article_path(article) %>">
+                    <%= article.title %>
+                </a>
+            </li>
+        <% end %>
     <% end %>
 </ul>
 
