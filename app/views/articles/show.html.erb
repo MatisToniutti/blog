@@ -1,0 +1,38 @@
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+
+<ul>
+    <li><%= link_to "Éditer", edit_article_path(@article) %></li>
+    <li><%= link_to "Supprimer", article_path(@article), 
+        method: :delete,
+        data: { confirm: "Êtes-vous sûr?" } %>
+    </li>
+    <li><%= link_to "Revenir aux articles", root_path %></li>
+</ul>
+
+<h2>Commentaires</h2>
+<% @article.comments.each do |comment| %>
+    <p>
+        <strong>Nom :</strong>
+        <%= comment.commenter %>
+    </p>
+
+    <p>
+        <strong>Commentaire :</strong>
+        <%= comment.body %>
+    </p>
+<% end %>
+
+<h2>Ajouter un commentaire :</h2>
+<%= form_with model: [@article, @article.comments.build ] do |form| %>
+    <p>
+        <%= form.label :nom %><br>
+        <%= form.text_field :commenter %>
+    </p>
+    <p>
+        <%= form.label :commentaire %><br>
+        <%= form.text_area :body %>
+    </p>
+    <p><%= form.submit %></p>
+<% end %>
