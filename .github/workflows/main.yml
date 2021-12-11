@@ -72,7 +72,7 @@ jobs:
         run: |
           brakeman -f json > tmp/brakeman.json || exit 0
       
-      -name: Run migration
+      - name: Run migration
         run: |
           db:migrate
 
