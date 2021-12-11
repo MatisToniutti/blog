@@ -41,6 +41,10 @@ jobs:
         run: |
           bundle exec rails db:prepare
 
+      - name: Database migration
+        run: |
+          rails cb:migrate
+
       - name: Run Tests
         # env:
         #   DATABASE_URL: postgres://postgres:@localhost:5432/databasename
