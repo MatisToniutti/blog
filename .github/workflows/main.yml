@@ -9,7 +9,6 @@ on:
 
 jobs:
   test:
-    ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     # services:
     #   db:
     #     image: postgres:11
@@ -21,6 +20,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.45.0
         with:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
           ruby-version: 2.7.1
 
       - uses: Borales/actions-yarn@v2.3.0
