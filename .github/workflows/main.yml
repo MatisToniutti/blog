@@ -71,10 +71,6 @@ jobs:
       - name: Run Brakeman
         run: |
           brakeman -f json > tmp/brakeman.json || exit 0
-      
-      - name: Run migration
-        run: |
-          db:migrate
 
       - name: Brakeman Report
         uses: devmasx/brakeman-linter-action@v1.0.0
