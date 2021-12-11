@@ -1,5 +1,5 @@
 name: CI
-ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
 
 on:
   push:
@@ -9,6 +9,7 @@ on:
 
 jobs:
   test:
+    ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     # services:
     #   db:
     #     image: postgres:11
