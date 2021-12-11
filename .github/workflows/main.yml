@@ -43,7 +43,7 @@ jobs:
 
       - name: Database migration
         run: |
-          rails cb:migrate
+          bundle exec rake db:migrate RAILS_ENV=test
 
       - name: Run Tests
         # env:
