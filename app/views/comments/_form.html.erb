@@ -11,5 +11,10 @@
         <%= form.label :status %><br>
         <%= form.select :status, ['public', 'private','archived'], selected: 'public' %>
     </p>
+
+    <p>
+        <%= form.label :note %><br>
+        <%= form.select :note, [1,2,3,4,5], selected: 1 %>/5
+    </p>
     <p><%= form.submit %></p>
 <% end %>

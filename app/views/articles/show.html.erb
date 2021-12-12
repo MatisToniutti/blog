@@ -1,6 +1,8 @@
-<h1><%= @article.title %></h1>
+<h1>Titre de l'article : <%= @article.title %></h1>
 
-<p><%= @article.body %></p>
+<p>Description : <%= @article.body %></p>
+
+<p>Note : <%= @article.note %>/5</p>
 
 <ul>
     <li><%= link_to "Éditer", edit_article_path(@article) %></li>

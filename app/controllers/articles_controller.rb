@@ -7,6 +7,11 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    if @article.comments.blank?
+      @article.note = 0
+    else
+      @article.note = @article.comments.average(:note).round(1)
+    end
   end
 
   def new

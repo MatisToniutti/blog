@@ -9,6 +9,11 @@
 </p>
 
 <p>
+    <strong>Note : </strong>
+    <%= comment.note %>/5
+</p>
+
+<p>
     <%= link_to 'Supprimer le commentaire', [comment.article, comment],
         method: :delete,
         data: { confirm: "Sûr?" } %>
